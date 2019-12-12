@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1576137982 source:c:\users\godso\desktop\morpion\main.c
+	<stdio.h>
+	<stdlib.h>
+
