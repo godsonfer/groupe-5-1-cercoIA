@@ -199,10 +199,7 @@ int quitter;
 /*
 fonction permettant d'afficher les regles du jeux
 */
-void membresDuGroupe(){
-    printf("1-ATIKA Caroline \n \n2-FELIHO Hommel\n \n3-KOUAGOU Ferdinand(responsable )\n \n4-MADOCOTIA S.Avent \n \n5-ODJO Abib \n \n6-ZAKARI Mistoura\n \n");
-    quitter_Menu();
-}
+
 
 void regleDuJeu(){
     printf("1 - Chaque joueur a un tour \n \n");
@@ -225,12 +222,10 @@ void jouer(){
 }
 
 void menu(){
-    printf("GROUPE 5-1-CERCO-IA \n \n");
     printf("===========JEU DE MORPION========= \n \n");
     printf("1-Jouer \n \n");
     printf("2-Regles du jeux \n \n");
-    printf("3-Membres du groupe \n \n");
-    printf("4-Quitter \n \n ");
+    printf("3-Quitter \n \n ");
 }
 
 
@@ -272,9 +267,6 @@ void bienvenuUtilisateur (){
                 regleDuJeu();
             break;
 
-            case 3:
-                printf("Les membres du groupe sont : \n \n");
-                membresDuGroupe();
             break;
             case 4:
                 return;
