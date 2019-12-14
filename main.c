@@ -3,12 +3,11 @@
 
 #define NB_COLONNE 3
 #define NB_LIGNE 3
-#define NB_TOUR 3
+
 /*Prototypes de quelque fonctions*/
 
 void regleDuJeu(void);
 void bienvenuUtilisateur(void);
-void membresDuGroupe(void);
 void menu(void);
 void retour_recommencer (void);
 void jouer(void);
@@ -153,20 +152,16 @@ Boolean testeFinJeu() {
         }
       }
         if (estFini) {
-        for(int tour =0; tour<NB_TOUR; tour++){
-          return FALSE;
 
             printf("Felicitations au joueur ");
             if (joueurGagnant == ROND)
               printf(" O ");
             else
               printf("X ");
-            printf("qui a gagne la %d.\n", tour);
+            printf("qui a gagne le jeux.\n");
             return  TRUE;
             }
-             }
 
-        else
      /* teste si la grille n'est pas pleine */
       for (i=0; i<NB_LIGNE; i++) {
         for (j=0; j<NB_COLONNE; j++) {
@@ -182,13 +177,13 @@ Boolean testeFinJeu() {
 
 void quitter_Menu(){
 int quitter;
-    printf("\n \n 1- Menu 2- Quitter \n \n");
+    printf("\n \n 1- Menu 0- Quitter \n \n");
     scanf("%d", &quitter);
     switch(quitter){
         case 1:
             menu();
         break;
-        case 2:
+        case 0:
            return;
         break;
         default :
@@ -199,10 +194,7 @@ int quitter;
 /*
 fonction permettant d'afficher les regles du jeux
 */
-void membresDuGroupe(){
-    printf("1-ATIKA Caroline \n \n2-FELIHO Hommel\n \n3-KOUAGOU Ferdinand(responsable )\n \n4-MADOCOTIA S.Avent \n \n5-ODJO Abib \n \n6-ZAKARI Mistoura\n \n");
-    quitter_Menu();
-}
+
 
 void regleDuJeu(){
     printf("1 - Chaque joueur a un tour \n \n");
@@ -220,17 +212,15 @@ void jouer(){
         metUnPionSurLaGrille();
         afficheGrille();
     }while (!testeFinJeu());
-    testeFinJeu() ?retour_recommencer() :"" ;
+    retour_recommencer();
 
 }
 
 void menu(){
-    printf("GROUPE 5-1-CERCO-IA \n \n");
     printf("===========JEU DE MORPION========= \n \n");
     printf("1-Jouer \n \n");
     printf("2-Regles du jeux \n \n");
-    printf("3-Membres du groupe \n \n");
-    printf("4-Quitter \n \n ");
+    printf("0-Quitter \n \n ");
 }
 
 
@@ -272,11 +262,7 @@ void bienvenuUtilisateur (){
                 regleDuJeu();
             break;
 
-            case 3:
-                printf("Les membres du groupe sont : \n \n");
-                membresDuGroupe();
-            break;
-            case 4:
+            case 0:
                 return;
 
 
